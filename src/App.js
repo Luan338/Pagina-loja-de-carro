@@ -126,6 +126,9 @@ class Car extends Component {
           </S.CarPurchase>
       
           <S.ChoiceBox>
+            <S.BoxDirection>
+                <S.ParagraphDirection>Arraste seus carros preferidos aqui...</S.ParagraphDirection>
+            </S.BoxDirection>
             {this.state.carAdd.map((item)=>{
               return(
                 <S.Group>
@@ -134,8 +137,8 @@ class Car extends Component {
                     <S.Subtraction id={item.id} onClick={(ev) => this.funcBtnRemove(ev)}>-</S.Subtraction>
                   </S.BoxNameCar>
                   <S.BoxAbout>
-                    <S.Paragraph>Tipo:{item.price}</S.Paragraph>
-                    <S.Paragraph>Preço:{item.type}</S.Paragraph>
+                    <S.Paragraph><S.Span>Tipo:</S.Span>{item.type}</S.Paragraph>
+                    <S.Paragraph><S.Span>Preço:</S.Span>{item.price}</S.Paragraph>
                   </S.BoxAbout>
                 </S.Group>
               )

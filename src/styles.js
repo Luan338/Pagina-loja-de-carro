@@ -105,7 +105,17 @@ export const ChoiceBox = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     border: solid 1px #d3d3d3;
+`;
+
+export const BoxDirection = styled.div`
+    background-color: red;
+`;
+
+export const ParagraphDirection = styled.p`
+    color: yellow;
+    font-size: 1.5vw;
 `;
 
 export const BoxResult = styled.div`
@@ -129,6 +139,11 @@ export const Group = styled.div`
 
 export const Paragraph = styled.p`
 
+`;
+
+export const Span = styled.span`
+    font-weight: bold;
+    margin-right: 5px;
 `;
 
 export const Subtraction = styled.button`
