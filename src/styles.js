@@ -110,18 +110,18 @@ export const ChoiceBox = styled.div`
 `;
 
 export const BoxDirection = styled.div`
-    background-color: red;
 `;
 
 export const ParagraphDirection = styled.p`
-    color: yellow;
-    font-size: 1.5vw;
+    font-size: 1vw;
 `;
 
 export const BoxResult = styled.div`
     display: flex;
     width: 30%;
     margin-left: 70%;
+    justify-content: space-around;
+    align-items: center;
 `;
 
 export const Total = styled.h3`

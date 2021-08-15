@@ -149,6 +149,7 @@ class Car extends Component {
 
         <S.BoxResult>
             <S.Total>Total</S.Total>
+            <S.Paragraph>{this.state.carAdd.reduce((a, b) => a + b.price, 0).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</S.Paragraph>
           </S.BoxResult>
       </S.Container>
       
