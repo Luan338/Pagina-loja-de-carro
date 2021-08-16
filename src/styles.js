@@ -41,7 +41,7 @@ export const EnvelopTitle = styled.h2`
 
 `;
 export const EnvelopCar = styled.div`
-    display: flex;
+    display: ${props=> props.display ? 'none' : 'flex'};
     width: 220px;
     margin-bottom: 5px ; 
     flex-direction: column;
@@ -110,6 +110,14 @@ export const ChoiceBox = styled.div`
 `;
 
 export const BoxDirection = styled.div`
+    display: ${props => props.display ? 'none' : 'flex'};
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const CarImg = styled.img`
+    width: 50%
 `;
 
 export const ParagraphDirection = styled.p`
