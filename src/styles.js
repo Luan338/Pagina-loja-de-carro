@@ -38,10 +38,10 @@ export const EnvelopTitle = styled.h2`
     margin: 0 ;
     border: solid 1px #d3d3d3;
     border-radius: 5px 5px 0px 0px ; 
-
 `;
 export const EnvelopCar = styled.div`
-    display: ${props=> props.display ? 'none' : 'flex'};
+    opacity: ${props=> props.opacity ? "0.5" : "1"};
+    display: flex;
     width: 220px;
     margin-bottom: 5px ; 
     flex-direction: column;
@@ -52,22 +52,18 @@ export const EnvelopCar = styled.div`
     cursor: pointer;
     box-shadow: 0px 0px 10px 0px #add8e6;
     transition: 0.5s all;
-
     &:hover{
         box-shadow: none;
         transform: translateY(2px);
         border: solid 1px #add8e6;
     }
-
     &:hover ${EnvelopTitle}{
         background: blue;
     }
-
 `;
 
 
 export const BoxCardz = styled.div`
-
   
 `;
 
@@ -89,12 +85,10 @@ export const CarAssembler = styled.p`
 
 
 export const Preco = styled.p`
-
 `;
 
 
 export const Type = styled.p`
-
 `;
 
 export const ChoiceBox = styled.div`
@@ -146,7 +140,6 @@ export const Group = styled.div`
 `;
 
 export const Paragraph = styled.p`
-
 `;
 
 export const Span = styled.span`

@@ -85,8 +85,9 @@ class Car extends Component {
   }
 
   funcBtnAdd = (event) => {
-    const check = this.state.car.filter(item => item.id == event.id);
-
+    const {car} = this.state
+    const check = car.filter(item => item.id == event.id);
+    event.btnDisabled = true;
     this.setState({
       carAdd: this.state.carAdd.concat(check)
     })
@@ -108,8 +109,7 @@ class Car extends Component {
     const card_id = e.dataTransfer.getData("card_id");
 
     const filter = this.state.car.find(item => item.id == Number(card_id))
-    console.log(filter.id)
-    this.funcBtnAdd(filter.id)
+    this.funcBtnAdd(filter)
   }
 
   render() {
@@ -125,13 +125,13 @@ class Car extends Component {
               return (
                 <S.EnvelopCar
                   id={item.id}
-                  display={item.btnDisabled}
+                  opacity={item.btnDisabled}
                   onDragStart={this.handleStart}
                   draggable={true}
                 >
                   <S.EnvelopTitle>
                     <S.CarTitle>{item.name}</S.CarTitle>
-                    <S.Btn id={item.id} onClick={this.funcBtnAdd(item.id)}>+</S.Btn>
+                    <S.Btn id={item.id} onClick={() => this.funcBtnAdd(item)}>+</S.Btn>
                   </S.EnvelopTitle>
                   <S.BoxCardz>
                     <S.CarAssembler>
@@ -161,12 +161,12 @@ class Car extends Component {
               <S.CarImg src={ImgCar} alt='Carro de fundo' />
               <S.ParagraphDirection>Arraste seus carros preferidos aqui...</S.ParagraphDirection>
             </S.BoxDirection>
-            {this.state.carAdd.map((item) => {
+            {this.state.carAdd?.length && this.state.carAdd.map((item) => {
               return (
                 <S.Group>
                   <S.BoxNameCar>
                     <S.Paragraph>{item.name}</S.Paragraph>
-                    <S.Subtraction id={item.id} onClick={(ev) => this.funcBtnRemove(ev)}>-</S.Subtraction>
+                    <S.Subtraction id={item.id} onClick={() => this.funcBtnRemove(item)}>-</S.Subtraction>
                   </S.BoxNameCar>
                   <S.BoxAbout>
                     <S.Paragraph><S.Span>Tipo:</S.Span>{item.type}</S.Paragraph>
