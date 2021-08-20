@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import * as S from './styles'
 
-//Components
 import ImgCar from '../src/components/imgs/car.svg';
 
 class Car extends Component {
@@ -83,7 +82,7 @@ class Car extends Component {
       }
     ]
   }
-
+ 
   funcBtnAdd = (event) => {
     const {car} = this.state
     const check = car.filter(item => item.id == event.id);
@@ -94,6 +93,8 @@ class Car extends Component {
   }
 
   funcBtnRemove = (event) => {
+    const check = this.state.car.find(item => item.id == event.id);
+    check.btnDisabled = false;
     this.setState({
       carAdd: this.state.carAdd.filter(item => {
         return item.id != event.id
@@ -131,7 +132,9 @@ class Car extends Component {
                 >
                   <S.EnvelopTitle>
                     <S.CarTitle>{item.name}</S.CarTitle>
-                    <S.Btn id={item.id} onClick={() => this.funcBtnAdd(item)}>+</S.Btn>
+                    <S.Btn 
+                    id={item.id} 
+                    onClick={() => this.funcBtnAdd(item)}>+</S.Btn>
                   </S.EnvelopTitle>
                   <S.BoxCardz>
                     <S.CarAssembler>

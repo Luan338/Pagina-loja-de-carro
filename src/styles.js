@@ -41,6 +41,7 @@ export const EnvelopTitle = styled.h2`
 `;
 export const EnvelopCar = styled.div`
     opacity: ${props=> props.opacity ? "0.5" : "1"};
+    pointer-events: ${props=> props.opacity ? "none" : "auto"};
     display: flex;
     width: 220px;
     margin-bottom: 5px ; 
